@@ -57,11 +57,14 @@ export default {
     submitForm: function(){
       this.$refs.form.validate((valid)=>{
         if (valid){
+          if(this.formData.value && this.formData.type === 'OUTCOME' && this.formData.value > 0){
+            this.formData.value = -this.formData.value
+          }
           this.$emit('submitForm', {... this.formData})
         }
       })
     }
-  }
+  },
 }
 </script>
 

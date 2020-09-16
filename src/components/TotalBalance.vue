@@ -1,6 +1,6 @@
 <template>
   <div class="total-value" >Balance:
-    <span class="value">
+    <span :class='{"color-red": totalBalance < 0, "color-green": totalBalance > 0, "color-black": totalBalance == 0}'>
       {{ totalBalance }}
     </span>
     </div>
@@ -26,7 +26,13 @@ export default {
     margin: 15px 0px;
     font-weight: bold;
   }
-  .value{
+  .color-red{
     color: red
+  }
+  .color-black{
+    color: black
+  }
+  .color-green{
+    color: green
   }
 </style>
