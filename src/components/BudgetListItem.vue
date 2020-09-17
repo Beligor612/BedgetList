@@ -19,9 +19,22 @@ export default {
       type: Object,
       default: ()=>{},
     }
+  },
+  data: ()=> ({
+
+  }),
+  methods: {
+    deleteItem(id){
+      const isConfirm = confirm("Delete budget item?")
+      if(isConfirm){
+        this.$emit('deleteItem', id)
+      }
+    }
   }
 }
 </script>
+
+
 
 <style scoped>
 

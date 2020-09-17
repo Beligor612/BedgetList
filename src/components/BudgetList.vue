@@ -3,7 +3,7 @@
     <el-card :header="header">
       <template v-if="isEmpty" >
         <div class="list-item" v-for="(item, prop) in list" :key="prop">
-          <BudgetListItem :item="item"/>
+          <BudgetListItem :item="item" @deleteItem="deleteItem"/>
         </div>
       </template>
       <template v-else>
